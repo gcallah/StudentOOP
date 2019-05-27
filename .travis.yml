@@ -1,0 +1,14 @@
+language: cpp
+
+compiler:
+  - clang
+
+script:
+  - make tests
+
+notifications:
+  email:
+    recipients:
+      - ejc369@nyu.edu
+    on_success: always
+    on_failure: never
