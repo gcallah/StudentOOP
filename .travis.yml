@@ -12,3 +12,8 @@ notifications:
       - ejc369@nyu.edu
     on_success: always
     on_failure: never
+
+    recipients:
+      - mz2325@nyu.edu
+    on_success: always
+    on_failure: always  
