@@ -3,7 +3,5 @@
 using namespace std;
 
 int main() {
-	sayHello();
-
-	return 0;
+	return sayHello();
 }

@@ -1,1 +1,1 @@
-void sayHello();
+int sayHello();
