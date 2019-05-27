@@ -4,5 +4,5 @@
 using namespace std;
 
 void sayHello() {
-	cout << "Hello World!";
+	cout << "Hello World!" << endl;
 }
