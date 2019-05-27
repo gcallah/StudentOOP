@@ -10,3 +10,7 @@ $(TEST_DIR)/test_hello: $(STUDENT_DIR)/hello.cpp $(TEST_DIR)/test_hello.cpp
 
 tests: hello
 	tests/test_hello
+
+prod: tests
+	git commit -a -m "testing new code"
+	git push origin master
