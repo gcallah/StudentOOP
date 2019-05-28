@@ -1,4 +1,4 @@
-CXXFLAGS=-g -std=c++14 -Wall
+CXXFLAGS=-g -std=c++14 -Wall -pedantic
 CC=$(CXX)
 
 STUDENT_DIR=my_code
