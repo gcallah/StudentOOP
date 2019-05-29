@@ -8,8 +8,13 @@ hello: $(TEST_DIR)/test_hello
 
 $(TEST_DIR)/test_hello: $(STUDENT_DIR)/hello.cpp $(TEST_DIR)/test_hello.cpp
 
-tests: hello
+basics: $(TEST_DIR)/test_basics
+
+$(TEST_DIR)/test_basics: $(STUDENT_DIR)/basics.cpp $(TEST_DIR)/test_basics.cpp
+
+tests: hello basics
 	tests/test_hello
+	tests/test_basics
 
 prod: tests
 	git commit -a -m "testing new code"
