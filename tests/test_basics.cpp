@@ -29,7 +29,6 @@ int main() {
     ret = 77;
     ret = my_abs(-test_num);
     assert(ret == test_num);
-    return 0;
 
     ret = sum(test_num);
     assert(ret == 45);
