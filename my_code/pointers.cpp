@@ -1,9 +1,19 @@
 #include <iostream>
-#include "hello.h"
+#include "pointers.h"
 
 using namespace std;
 
-int sayHello() {
-	cout << "Hello World!" << endl;
-	return 0;
+void inc_by_value(int n) {
+    ++n;
 }
+
+
+void inc_with_pointer(int* n) {
+    ++(*n);
+}
+
+
+void inc_with_reference(int& n) {
+    ++n;
+}
+
