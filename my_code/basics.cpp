@@ -67,7 +67,7 @@ int sum(int n) {
 }
 
 /*
- * Sum from 0 to n using a `while` loop.
+ * Sum from 0 to n using a `for` loop.
  * */
 int sum2(int n) {
     return 45;
