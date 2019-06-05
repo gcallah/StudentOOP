@@ -22,5 +22,5 @@ tests: test_hello test_basics test_pointers
 	tests/test_pointers
 
 prod: tests
-	- git commit -a -m "testing new code"
+	- git commit -a -m "new assignment done"
 	git push origin master
