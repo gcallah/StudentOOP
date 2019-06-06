@@ -20,6 +20,11 @@ test_weather: $(TEST_DIR)/test_weather
 
 $(TEST_DIR)/test_weather: $(STUDENT_DIR)/weather.cpp $(TEST_DIR)/test_weather.cpp
 
+test_complex: $(TEST_DIR)/test_complex
+
+$(TEST_DIR)/test_complex: $(STUDENT_DIR)/complex.cpp $(TEST_DIR)/test_complex.cpp
+
+
 tests: test_hello test_basics test_pointers
 	tests/test_hello
 	tests/test_basics
