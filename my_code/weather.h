@@ -18,6 +18,7 @@ const int OK = 1;
 const int GOOD = 2;
 
 class Weather {
+    // << should output name, rating, and use the GPS << to output my_loc
     friend std::ostream& operator<<(std::ostream& os, const Weather& w);
  public:
     Weather(std::string nm, GPS loc);
