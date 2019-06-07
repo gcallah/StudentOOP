@@ -5,13 +5,7 @@
 
 using namespace std;
 
-int main() {
-    Weather irkutsk = Weather("Irkutsk", GPS(46.3, 67.2));
-
-    string filenm;
-    cout << "Input the name of the new readings file:\n";
-    cin >> filenm;
-
+void get_wreadings(string filenm, Weather& w) {
     ifstream rfile(filenm);
     if (!rfile) {
         cout << "Could not read input file: " << filenm << endl;
@@ -21,9 +15,20 @@ int main() {
     double temp, hum, ws;
     while (rfile >> m >> d >> y >> temp >> hum >> ws) {
         WReading wr = WReading(Date(d, m, y), temp, hum, ws);
-        irkutsk.add_reading(wr);
+        w.add_reading(wr);
     }
     rfile.close();
+}
+
+
+int main() {
+    Weather irkutsk = Weather("Irkutsk", GPS(46.3, 67.2));
+
+    string filenm;
+    cout << "Input the name of the new readings file:\n";
+    cin >> filenm;
+
+    get_wreadings(filenm, irkutsk);
 
     cout << irkutsk << endl;
 }
