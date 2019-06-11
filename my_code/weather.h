@@ -33,6 +33,9 @@ class WReading {
     {
     }
 
+    double get_tempF();
+    double get_tempC() { return temperature; }
+
  private:
     Date date;
     double temperature;  // stored temp in C
