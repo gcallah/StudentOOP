@@ -26,10 +26,6 @@ istream& operator>> (istream& is, Complex& c) {
 }
 
 
-Complex::Complex(double real, double imag)
-            : real{real}, imag{imag} {}
-
-
 Complex::operator bool() const {
 }
 
