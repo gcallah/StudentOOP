@@ -10,7 +10,6 @@ class Complex {
      * The equality operator should be a friend since it is binary
      * and symmetrical.
      * */
-    friend bool operator== (const Complex& c1, const Complex& c2);
 
  public:
     /*
@@ -82,9 +81,18 @@ class Complex {
      * */
     Complex operator-(const Complex& c);
 
+    /*
+     * Let's do multiplication by a scalar:
+     * */
+    Complex operator*(const int i);
+
  private:
     double real;
     double imag;
 };
+
+
+bool operator== (const Complex& c1, const Complex& c2);
+bool operator!= (const Complex& c1, const Complex& c2);
 
 #endif

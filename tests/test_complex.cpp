@@ -23,6 +23,9 @@ int main() {
     }
 
     Complex c2{43.2, 58.9};
+    assert(c2.get_real() == 43.2);
+    assert(c2.get_imag() == 58.9);
+
     if(DEBUG)
     {
         cout << "c2 = " << c2 << endl;
@@ -30,12 +33,15 @@ int main() {
 
     // see if `Complex` addition works:
     // Complex c3 = c1 + c2;
+    // see if `Complex` subtraction works:
 
     Complex c4 = Complex();
-    // test post-increment:
+    // test pre-increment:
     c4++;
     c4++;
     assert(c4.get_real() == 2);
+    Complex postinc = c4++;
+    assert(postinc.get_real() == 2);
     /*
      * Test equality operator. If we take the `explicit` off of
      * `bool()` in class definition, then this will fail as ambiguous:
@@ -52,5 +58,10 @@ int main() {
      * construct a `Complex` out of 14.2 using the default
      * imaginary component of 0.0.
      * */
-    // Complex c5 = 14.2;
+    Complex c5 = 14.2;
+    cout << c5 << endl;
+    assert(c5.get_real() == 14.2);
+    Complex scalar_prod = c5 * 2;
+    assert(scalar_prod.get_real() == 28.4);
+    assert(scalar_prod.get_imag() == 0.0);
 }
