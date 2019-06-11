@@ -71,15 +71,8 @@ class Complex {
      * */
     Complex operator--(int dummy);
 
-    /*
-     * `+` adds real to real, and complex to complex.
-     * */
-    Complex operator+(const Complex& c);
 
-    /*
-     * `-` subtracts real from real, and complex from complex.
-     * */
-    Complex operator-(const Complex& c);
+    Complex operator-=(const Complex& c);
 
     /*
      * Let's do multiplication by a scalar:
@@ -94,5 +87,14 @@ class Complex {
 
 bool operator== (const Complex& c1, const Complex& c2);
 bool operator!= (const Complex& c1, const Complex& c2);
+/*
+ * `+` adds real to real, and complex to complex.
+ * */
+Complex operator+(const Complex& c1, const Complex& c2);
+
+/*
+ * `-` subtracts real from real, and complex from complex.
+ * */
+Complex operator-(const Complex& c1, const Complex& c2);
 
 #endif
