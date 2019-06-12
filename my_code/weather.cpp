@@ -18,11 +18,13 @@ Image::Image(int w, int h, std::string flnm)
 Image::Image(const Image& img2) {
 }
 
+// destructor
 Image::~Image() {
 }
 
- Image& Image::operator=(const Image& img2) {
- }
+// assignment operator:
+Image& Image::operator=(const Image& img2) {
+}
 
 int Image::image_sz() {
     return width * height;
