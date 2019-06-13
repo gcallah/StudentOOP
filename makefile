@@ -24,6 +24,10 @@ test_complex: $(TEST_DIR)/test_complex
 
 $(TEST_DIR)/test_complex: $(STUDENT_DIR)/complex.cpp $(TEST_DIR)/test_complex.cpp
 
+test_vector: $(TEST_DIR)/test_vector
+
+$(TEST_DIR)/test_vector: $(STUDENT_DIR)/vector.cpp $(TEST_DIR)/test_vector.cpp
+
 
 tests: test_hello test_basics test_pointers test_complex
 	tests/test_hello

@@ -11,4 +11,4 @@ cp my_code/hello.cpp my_code/$1.cpp
 git add my_code/$1.cpp
 cp my_code/hello.h my_code/$1.h
 git add my_code/$1.h
-vim3.sh $1
+./vim3.sh $1
