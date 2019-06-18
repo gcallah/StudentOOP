@@ -1,14 +1,14 @@
 
 const int DEF_CAPACITY = 10;
 
-class vector {
+class MyVec {
     public:
-        vector();
+        MyVec();
 
         // copy control:
-        vector(const vector& v2);
-        ~vector();
-        vector& operator=(const vector& v2);
+        MyVec(const MyVec& v2);
+        ~MyVec();
+        MyVec& operator=(const MyVec& v2);
 
         void push_back(int val);
         int size() const { return sz; }
@@ -21,4 +21,4 @@ class vector {
 };
 
 
-void print_vector(vector v);
+void print_vector(const MyVec& v);

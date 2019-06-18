@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void print_vector(vector v) {
+void print_vector(const MyVec& v) {
     for (int i = 0; i < v.size(); i++) {
         cout << v[i] << " ";
     }
@@ -11,13 +11,13 @@ void print_vector(vector v) {
 }
 
 
-vector::vector() {
+MyVec::MyVec() {
     sz = 0;
     capacity = DEF_CAPACITY;
     data = new int[DEF_CAPACITY];
 }
 
-vector::vector(const vector& v2) {
+MyVec::MyVec(const MyVec& v2) {
     capacity = v2.capacity;
     sz = v2.size();
     data = new int[capacity];
@@ -27,11 +27,11 @@ vector::vector(const vector& v2) {
     }
 }
 
-vector::~vector() {
+MyVec::~MyVec() {
     delete[] data;
 }
 
-vector& vector::operator=(const vector& v2) {
+MyVec& MyVec::operator=(const MyVec& v2) {
     if (&v2 != this) {
         delete[] data;
         capacity = v2.capacity;
@@ -46,7 +46,7 @@ vector& vector::operator=(const vector& v2) {
 }
 
 
-void vector::push_back(int val) {
+void MyVec::push_back(int val) {
     if (sz == capacity) {
         cout << "Increasing capacity\n";
         // get new array of capacity * 2
@@ -64,10 +64,12 @@ void vector::push_back(int val) {
     data[sz++] = val;
 }
 
-int vector::operator[](int i) const {
+// this [] is for reading items from the MyVec:
+int MyVec::operator[](int i) const {
     return data[i];
 }
 
-int& vector::operator[](int i) {
+// this [] allows write access to items in the MyVec:
+int& MyVec::operator[](int i) {
     return data[i];
 }
