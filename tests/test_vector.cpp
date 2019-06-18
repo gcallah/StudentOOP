@@ -28,9 +28,9 @@ int main() {
 
     MyVec v2 = v;
     print_vector(v2);
-    assert(v2[199] == 398);
+    assert(v2 == v);
 
     v2 = v3;
     print_vector(v2);
-    assert(v2[1] == 18);
+    assert(v2 == v3);
 }
