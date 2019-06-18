@@ -27,5 +27,5 @@ int main() {
     print_vector(v2);
 
     v2 = v3;
-    print_vector(v3);
+    print_vector(v2);
 }
