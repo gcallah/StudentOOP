@@ -35,7 +35,7 @@ bool del_head(Node*& head);
 /*
  * Delete the last node and set prev->next to nullptr:
  * */
-bool del_tail(Node*& head, Node*& prev);
+bool del_tail(Node*& head);
 
 /*
  * Duplicate the entire list -- you must not share memory!
