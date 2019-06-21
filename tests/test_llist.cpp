@@ -22,10 +22,19 @@ int main() {
     add_at_front(head, 4);
     assert(head->data == 4);
 
-    del_tail(head, head);
+// delete the head:
+    del_head(head);
+    assert(head->data == 8);
+
+// delete the tail:
+    del_tail(head);
     lastp = last(head);
     cout << "Last: " << lastp << endl;
     assert(lastp->data == 128);
+    Node* list_of_one = new Node(1, nullptr);
+    del_tail(list_of_one);
+    print_list(cout, list_of_one);
+
 // check our whole list:
     cout << "head list: \n";
     print_list(cout, head);
@@ -36,13 +45,14 @@ int main() {
     print_list(cout, reversed);
     assert(reversed->data == 128);
     lastp = last(reversed);
-    assert(lastp->data == 4);
+    assert(lastp->data == 8);
 
+/*
 // now duplicate it:
     Node* dupe = duplicate(head);
     cout << "Duplicate: \n";
     print_list(cout, dupe);
-    assert(duplicate->data == 4);
+    assert(duplicate->data == 8);
     lastp = last(duplicate);
     assert(lastp->data == 128);
 
@@ -51,7 +61,6 @@ int main() {
     cout << "Joined lists: \n";
     print_list(cout, head);
     lastp = last(head);
-    assert(lastp->data == 4);
-/*
+    assert(lastp->data == 8);
 */
 }
