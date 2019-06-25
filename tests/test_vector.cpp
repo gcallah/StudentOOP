@@ -33,4 +33,8 @@ int main() {
     v2 = v3;
     print_vector(v2);
     assert(v2 == v3);
+
+    for (int i : v3) {
+        assert((i % 9) == 0);
+    }
 }
