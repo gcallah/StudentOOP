@@ -3,6 +3,7 @@ const int DEF_CAPACITY = 10;
 const int CAPACITY_MULT = 2;
 
 class MyVec {
+    public:
         class Iterator {
         /*
          * This class supports ranged for loops.
@@ -13,11 +14,7 @@ class MyVec {
          * operator!=
          * */
             friend bool operator!=(Iterator& rhs, Iterator& lhs) {
-                return rhs.iptr != lhs.iptr;
-            }
-
-            friend bool operator==(Iterator& rhs, Iterator& lhs) {
-                return rhs.iptr == lhs.iptr;
+                return true;
             }
 
         public:
@@ -33,7 +30,6 @@ class MyVec {
             int* iptr;
     };
 
-    public:
         MyVec();
         MyVec(int sz, int val=0);
 

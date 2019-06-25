@@ -7,12 +7,11 @@
 using namespace std;
 
 void get_wreadings(string filenm, Weather& w) {
-    Image* base = new Image(100, 100, "base.img");
     Gif* gif = new Gif(100, 100, "file.gif");
     Jpeg* jpeg = new Jpeg(100, 100, "file.jpg", LOW);
     Png* png = new Png(100, 100, "file.png");
 
-    vector<Image*> images = {base, gif, jpeg, png, nullptr};
+    vector<Image*> images = {gif, jpeg, png, nullptr};
     
     ifstream rfile(filenm);
     if (!rfile) {
@@ -30,6 +29,7 @@ void get_wreadings(string filenm, Weather& w) {
     rfile.close();
 }
 
+/*
 void make_images1(Image& img1) {
     for (int i = 0; i < 100; i++) {
         Image img2 = Image(10, 10, "foo.txt");
@@ -42,6 +42,7 @@ void make_images2(Image& img1) {
         Image img2 = img1;
     }
 }
+*/
 
 
 int main() {
