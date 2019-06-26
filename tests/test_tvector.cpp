@@ -41,7 +41,7 @@ int main() {
     print_vector(v2);
 
     for (int i = 0; i < v3.size(); i++) {
-        assert((i % 9) == 0);
+        assert((v3[i] % 9) == 0);
     }
 
     MyVec<string> sv = MyVec<string>(10, "Hello");
