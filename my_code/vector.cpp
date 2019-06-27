@@ -3,11 +3,11 @@
 
 using namespace std;
 
+
 void print_vector(const MyVec& v) {
     for (int i : v) cout << i << " ";
     cout << endl;
 }
-
 
 MyVec::MyVec() : sz(0) {
     capacity = DEF_CAPACITY;

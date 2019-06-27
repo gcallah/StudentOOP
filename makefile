@@ -26,7 +26,7 @@ $(TEST_DIR)/test_complex: $(STUDENT_DIR)/complex.cpp $(TEST_DIR)/test_complex.cp
 
 test_vector: $(TEST_DIR)/test_vector
 
-$(TEST_DIR)/test_vector: $(STUDENT_DIR)/vector.cpp $(TEST_DIR)/test_vector.cpp
+$(TEST_DIR)/test_vector: $(TEST_DIR)/test_vector.cpp
 
 test_llist: $(TEST_DIR)/test_llist
 
