@@ -4,6 +4,6 @@
 using namespace std;
 
 int main() {
-    Bst<int> iroot = Bst<int>(2);
-    cout << iroot << endl;
+    Bst<int>* iroot = new Bst<int>(2);
+    print_bst(*iroot);
 }

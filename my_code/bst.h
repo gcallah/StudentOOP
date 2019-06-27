@@ -2,7 +2,7 @@
 
 template <typename T>
 class Bst {
-    friend std::ostream& operator<<(std::ostream& os, const Bst<T>& bst);
+    friend void print_bst(const Bst<T>& bst);
 
     public:
         Bst(T d, Bst* l=nullptr, Bst* r=nullptr)
@@ -15,9 +15,20 @@ class Bst {
 
 
 template <typename T>
-std::ostream& operator<<(std::ostream& os, const Bst<T>& bst) {
-    os << "data: " << bst.data << "; left: "
-        << bst.left << "; right: " << bst.right;
-    return os;
+void print_bst(const Bst<T>& bst) {
+    std::cout << "data: " << bst.data << "; left: ";
+
+    if (!bst.left) std::cout << "nullptr ";
+    else {
+        std::cout << "\t\n";
+        print_bst(bst.left);
+    }
+    std::cout << "; right: ";
+    if (!bst.right) std::cout << "nullptr ";
+    else {
+        std::cout << "\t\n";
+        print_bst(bst.right);
+    }
+    std::cout << std::endl;
 }
 
