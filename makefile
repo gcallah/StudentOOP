@@ -40,6 +40,10 @@ $(TEST_DIR)/test_templ_ll: $(TEST_DIR)/test_templ_ll.cpp
 
 # $(TEST_DIR)/test_tvector: $(TEST_DIR)/test_tvector.cpp
 
+test_stl: $(TEST_DIR)/test_stl
+
+$(TEST_DIR)/test_stl: $(TEST_DIR)/test_stl.cpp
+
 
 tests: test_hello test_basics test_pointers test_complex test_vector test_llist 
 	tests/test_hello
