@@ -36,12 +36,12 @@ test_templ_ll: $(TEST_DIR)/test_templ_ll
 
 $(TEST_DIR)/test_templ_ll: $(TEST_DIR)/test_templ_ll.cpp
 
-test_tvector: $(TEST_DIR)/test_tvector
+# test_tvector: $(TEST_DIR)/test_tvector
 
-$(TEST_DIR)/test_tvector: $(TEST_DIR)/test_tvector.cpp
+# $(TEST_DIR)/test_tvector: $(TEST_DIR)/test_tvector.cpp
 
 
-tests: test_hello test_basics test_pointers test_complex test_vector test_llist test_tvector
+tests: test_hello test_basics test_pointers test_complex test_vector test_llist 
 	tests/test_hello
 	tests/test_basics
 	tests/test_pointers
