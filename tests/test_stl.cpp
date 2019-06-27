@@ -11,6 +11,10 @@
 using namespace std;
 
 /*
+ * print_vec to print vectors
+ * */
+
+/*
  * Let's make a template for a `print_list` that can handle
  * lists of any type:
  * Templates are the C++ feature that enable generic programming.
@@ -21,6 +25,10 @@ using namespace std;
  * *containers* of any sequential type:
  * */
 
+
+/*
+ * A Cat class just so we can show these work on our types:
+ * */
 class Cat {
     friend ostream& operator<<(ostream& os, const Cat& cat) {
         os << "meow ";
@@ -56,9 +64,9 @@ int main() {
      * We will create it with a half-open range, and then sort it.
      * */
     vector<char> cvec(s2, s2 + dennislen);
-//    print("cvec", cvec);
+//    print_vec("cvec", cvec);
     sort(cvec.begin(), cvec.end());
-//    print("sorted cvec", cvec);
+//    print_vec("sorted cvec", cvec);
 
     /*
      * Create a `char` list:
@@ -71,11 +79,9 @@ int main() {
      * reverses an iterable structure:
      * */
     reverse(clist.begin(), clist.end());
-    /*
-     * We use `print_list` here just to make sure it works, but `print()`
-     * is preferred!
-     * */
 //    print_list("clist reversed", clist);
+//    print_list("clist2 not reversed", clist2);
+
     /*
      * But even after `clist` is reversed, `clist` and
      * `clist2` are still permutations of each other:
@@ -103,13 +109,14 @@ int main() {
     /*
      * Our print can work for lists as well as vectors:
      * */
-//    print("ilist", ilist);
+//    print("print: ilist", ilist);
+//    print("print: sorted cvec", cvec);
     /*
      * `sort()` does not work for lists, since they aren't random access.
      * Thus lists have their own `sort()` method, called below:
      * This *won't* work: `sort(ilist.begin(), ilist.end());`
      * */
-    ilist.sort();
+//    ilist.sort();
 //    print("ilist sorted", ilist);
 
     /*
