@@ -2,7 +2,22 @@
 
 template <typename T>
 class Bst {
-    friend void print_bst(const Bst<T>& bst);
+    friend void print_bst(const Bst<T>& bst) {
+        std::cout << "data: " << bst.data << "; left: ";
+   
+        if (!bst.left) std::cout << "nullptr ";
+        else {
+            std::cout << "\t\n";
+            print_bst(*bst.left);
+        }
+        std::cout << "; right: ";
+        if (!bst.right) std::cout << "nullptr ";
+        else {
+            std::cout << "\t\n";
+            print_bst(*bst.right);
+        }
+        std::cout << std::endl;
+    }
 
     public:
         Bst(T d, Bst* l=nullptr, Bst* r=nullptr)
@@ -14,21 +29,22 @@ class Bst {
 };
 
 
-template <typename T>
-void print_bst(const Bst<T>& bst) {
-    std::cout << "data: " << bst.data << "; left: ";
-
-    if (!bst.left) std::cout << "nullptr ";
-    else {
-        std::cout << "\t\n";
-        print_bst(bst.left);
-    }
-    std::cout << "; right: ";
-    if (!bst.right) std::cout << "nullptr ";
-    else {
-        std::cout << "\t\n";
-        print_bst(bst.right);
-    }
-    std::cout << std::endl;
-}
+//template <typename T>
+//void print_bst(const Bst<T>& bst) {
+//void print_bst(Bst<int> bst) {
+//    std::cout << "data: " << bst.data << "; left: ";
+//
+//    if (!bst.left) std::cout << "nullptr ";
+//    else {
+//        std::cout << "\t\n";
+//        print_bst(*bst.left);
+//    }
+//    std::cout << "; right: ";
+//    if (!bst.right) std::cout << "nullptr ";
+//    else {
+//        std::cout << "\t\n";
+//        print_bst(*bst.right);
+//    }
+//    std::cout << std::endl;
+//}
 
