@@ -1,5 +1,6 @@
 #include <cassert>
 #include <iostream>
+#include <string>
 #include "../my_code/vector.h"
 
 using namespace std;
@@ -7,7 +8,6 @@ using namespace std;
 template <typename T>
 int copy_vector(MyVec<T> v) {
     MyVec<T> local_v = v;
-    return local_v.size();
 }
 
 const int VEC_SZ = 20;
@@ -23,32 +23,13 @@ int main() {
     assert(iv[VEC_SZ - 1] == VEC_SZ - 1);
     for (int i = 0; i < iv.size(); i++) {
         iv[i] *= 2;
-    }
-    assert(iv[VEC_SZ - 1] == 38);
-    MyVec<int> v3;
-    for (int i = 9; i < 100; i += 9) {
-        v3.push_back(i);
-    }
-    assert(v3[1] == 18);
-    print_vector(v3);
 
-    MyVec<int> v2 = iv;
-    assert(v2 == iv);
-    print_vector(v2);
-
-    v2 = v3;
-    assert(v2 == v3);
-    print_vector(v2);
-
-    for (int i : v3) {
-        assert((i % 9) == 0);
-    }
-
-    MyVec<string> sv = MyVec<string>(10, "Hello");
-    for (int i = 0; i < sv.size(); i++) {
-        assert(sv[i] == "Hello");
-    }
-    print_vector(sv);
-    /*
-    */
+    iv.push_back(0);
+    cout << "iv[0] == " << iv[0] << endl;
+    MyVec<string> sv = MyVec<string>();
+    sv.push_back("Hello");
+    cout << "sv[0] == " << sv[0] << endl;
+    MyVec<double> dv = MyVec<double>();
+    dv.push_back(42.7);
+    cout << "dv[0] == " << dv[0] << endl;
 }

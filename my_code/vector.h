@@ -38,6 +38,9 @@ class MyVec {
             data = new T[DEF_CAPACITY];
         }
 
+=======
+class MyVec {
+    public:
 
         MyVec(int sz, T val) : sz{sz} {
             capacity = sz * 2;
@@ -69,6 +72,40 @@ class MyVec {
             sz++;
             if (sz > capacity) {
                 std::cout << "\n**** Increasing capacity ****\n";
+            T operator*() { return 0; }
+
+        private:
+            T* iptr;
+    };
+
+        MyVec() {
+            sz = 0;
+            capacity = DEF_CAPACITY;
+            data = new T[DEF_CAPACITY];
+        }
+
+        MyVec(int sz, T val=T()) {
+        }
+
+        // copy control:
+        MyVec(const MyVec& v2) {
+            copy(v2);
+        }
+
+        ~MyVec() { delete [] data; }
+
+        MyVec& operator=(const MyVec& v2) {
+            if (this != &v2) {
+                delete [] data;
+                copy(v2);
+            }
+            return *this;
+        }
+
+        void push_back(T val) {
+            sz++;
+            if (sz > capacity) {
+                std::cout << "Increasing capacity\n";
                 T* old_data = data;
                 data = new T[capacity * CAPACITY_MULT];
                 for (int i = 0; i < sz; i++) {
@@ -125,4 +162,3 @@ bool operator==(MyVec<T>& v1, MyVec<T>& v2) {
     }
     return true;
 }
-

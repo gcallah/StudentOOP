@@ -1,6 +1,6 @@
 #include <cassert>
 #include <iostream>
-#include "../my_code/vector.h"
+#include "../my_code/tvector.h"
 
 using namespace std;
 
@@ -40,8 +40,8 @@ int main() {
     assert(v2 == v3);
     print_vector(v2);
 
-    for (int i : v3) {
-        assert((i % 9) == 0);
+    for (int i = 0; i < v3.size(); i++) {
+        assert((v3[i] % 9) == 0);
     }
 
     MyVec<string> sv = MyVec<string>(10, "Hello");
