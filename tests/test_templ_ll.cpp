@@ -28,8 +28,9 @@ int main() {
     Node<string>* shead = nullptr;
     shead = new Node<string>("Hello", nullptr);
     string s = " world!";
-    add_at_end(shead, s);
+    add_at_end(shead, "world!");
     print_list(cout, shead);
+
 // now reverse it:
     Node<string>* sreversed = reverse(shead, (Node<string>*)nullptr);
     cout << "Reversed string list: \n";

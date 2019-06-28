@@ -37,31 +37,10 @@ class Bst {
             : data(d), parent(p), left(l), right(r) {}
 
         Bst<T>* insert(const T d) {
-            if (d == data) return nullptr;
-            else if (d < data) {
-                if (!left) {
-                    left = new Bst(d, this);
-                    return left;
-                }
-                else {
-                    return left->insert(d);
-                }
-            }
-            else {   // d > data
-                if (!right) {
-                    right = new Bst(d, this);
-                    return right;
-                }
-                else {
-                    return right->insert(d);
-                }
-            }
         }
 
-        T get_val() const { return data; }
-
-        Bst<T>* find(const T d) const {
-            return nullptr;
+        T get_val() const {
+            return data;
         }
 
     private:
