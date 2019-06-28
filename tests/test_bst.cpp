@@ -45,7 +45,7 @@ int main() {
     result = iroot->search(95);
     assert(result == nullptr);
 
-    pred45 = iroot->predecessor(45);
+    Bst<int>* pred45 = iroot->predecessor(45);
     assert(pred45->get_val() == 40);
     succ45 = iroot->successor(45);
     assert(succ45->get_val() == 50);
