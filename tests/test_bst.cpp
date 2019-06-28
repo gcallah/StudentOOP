@@ -51,7 +51,7 @@ int main() {
     assert(succ45->get_val() == 50);
     
      */
-    Bst<string>* sroot = new Bst<string>("Daniel");
+    Bst<string>* sroot = new Bst<string>("Ellie");
     assert(sroot->get_val() == "Ellie");
     print_bst(*sroot);
 
