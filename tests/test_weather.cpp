@@ -76,5 +76,9 @@ int main() {
     get_wreadings(filenm, irkutsk);
 
     cout << irkutsk << endl;
+    Gif gif = Gif(90, 90, "File.gif");
+    cout << "Displaying an Gif:\n";
+    gif.display("See! ");
+    cout << "Displaying list of images:\n";
     irkutsk.display_images();
 }

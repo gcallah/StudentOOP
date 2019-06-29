@@ -46,10 +46,12 @@ int Image::image_sz() {
 }
 
 
+/*
 string Gif::display(std::string s) {
     cout << "Displaying Gif " << s << endl;
     return s;
 }
+*/
 
 
 string Jpeg::display(std::string s) {

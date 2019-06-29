@@ -21,7 +21,12 @@ class Image {
      * class that can't be implemented.
      * */
     virtual std::string display(std::string s) = 0;
-    // std::string display(std::string s);
+    /*
+    std::string display(std::string s) {
+        std::cout << "Image! " << s << std::endl;
+        return s; 
+    }
+    */
     /*
      * If we don't want virtual method lookup, we
      * could just declare:
@@ -46,7 +51,7 @@ class Gif : public Image {
         : Image(w, h, flnm), compress_level(cl)
     {}
 
-    std::string display(std::string s);
+//    std::string display(std::string s);
 
  private:
     int compress_level;
