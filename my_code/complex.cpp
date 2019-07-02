@@ -30,9 +30,11 @@ istream& operator>> (istream& is, Complex& c) {
 Complex::Complex(double real, double imag) : real(real), imag(imag)
     {}
 
+    /*
 Complex::operator bool() const {
     return (real != 0.0) && (imag != 0.0);
 }
+*/
 
 Complex& Complex::operator++() {
     return *this;
