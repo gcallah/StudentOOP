@@ -18,17 +18,17 @@ class Complex {
      * data member is non-zero, and returns `true`
      * if so.
      * */
-    explicit operator bool() const;
+    operator bool() const;
     
     /*
      * Get the real component:
      * */
-    double get_real() const;
+    double get_real() const { return real; }
     
     /*
      * Get the imaginary component:
      * */
-    double get_imag() const;
+    double get_imag() const { return imag; }
 
     /*
      * This overload is pre-increment: pretty straightforward:

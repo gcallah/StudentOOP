@@ -38,7 +38,7 @@ int main() {
 //    c3 -= c2;
 //    assert(c3 == c1);
 //
-//    Complex c4 = Complex();
+    Complex c4 = Complex();
 //    // test pre-increment:
 //    ++c4;
 //    ++c4;
@@ -52,10 +52,10 @@ int main() {
 //     * `bool()` in class definition, then this will fail as ambiguous:
 //     * the compiler won't know if we want a `bool` or `Complex` comparison.
 //     * */
-//    if (1 == bool(c4))
-//        cout << "c4 == 1 is true\n";
-//    else
-//        cout << "c4 == 1 is false\n";
+    if (1 == c4)
+        cout << "c4 == 1 is true\n";
+    else
+        cout << "c4 == 1 is false\n";
 //    // test bool() operator:
 //    if (c4) {
 //        cout << "c4 is true\n";
