@@ -30,6 +30,11 @@ class Fib {
 };
 
 
+double your_func(double d, function<double(double)> f) {
+    return 0.0;  // ????
+}
+
+
 double square_func(double d, function<double(double)> f) {
     return f(d) * f(d);
 }
