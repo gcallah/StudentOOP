@@ -2,10 +2,31 @@
 #include <iostream>
 #include <functional>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
 const double PI = 3.14159265358979323846;
+
+/*
+ * An exception to throw when we get a number too big.
+ * */
+class NoNegative : public exception {
+public:
+    NoNegative(int n)
+        : badnum(n)
+    {
+    }
+
+    const char* what() const throw() {
+        string s = "Argument canot be negative: " + to_string(badnum);
+        return s.c_str();
+    }
+
+private:
+    int badnum;
+};
+
 
 class Sin {
     public:
@@ -20,7 +41,8 @@ class Fib {
         }
 
         long long int operator()(long long int n) {
-            if (n <= 1) return 1;
+            if (n < 0) throw (NoNegative(n));
+            else if (n <= 1) return 1;
             else return operator()(n - 1) + operator()(n - 2);
         }
 
@@ -41,7 +63,7 @@ double square_func(double d, function<double(double)> f) {
 
 
 int main() {
-    const long long int FIB_NUM = 46;
+    const long long int FIB_NUM = -46;
 
     // first functors:
     Sin sine = Sin();
@@ -50,8 +72,13 @@ int main() {
     d = sine(0);
     cout << "sin 0 == " << d << endl;
     Fib fib = Fib();
-    long long int f = fib(FIB_NUM);
-    cout << "fib(" << FIB_NUM << ") == " << f << endl;
+//    try {
+        long long int f = fib(FIB_NUM);
+        cout << "fib(" << FIB_NUM << ") == " << f << endl;
+//    }
+//    catch (NoNegative& e) {
+//        cerr << "Got a negative argument for fib: " << e.what() << endl;
+//    }
 
     // then lambdas -- use several functions from cmath here:
     d = square_func(0, [](double arg) { return sin(arg); });
